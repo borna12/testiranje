@@ -40,11 +40,11 @@ TagManager:
   - name: pozadina
     userID: 1
     uniqueID: 1553623953
-    locked: 1
+    locked: 0
   - name: planine
     userID: 2
     uniqueID: 2908506831
-    locked: 1
+    locked: 0
   - name: drvece
     userID: 3
     uniqueID: 291615345
@@ -52,10 +52,6 @@ TagManager:
   - name: foreground
     userID: 4
     uniqueID: 3710089593
-    locked: 0
-  - name: igrac
-    userID: 5
-    uniqueID: 2206577681
     locked: 0
   - name: Default
     userID: 0
