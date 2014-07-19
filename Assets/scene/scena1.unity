@@ -134,11 +134,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 310d9d612e68356498652c648f0f9b91, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.60454273
+      value: -11.0576143
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 310d9d612e68356498652c648f0f9b91, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 22.3214245
+      value: 7.65525818
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 310d9d612e68356498652c648f0f9b91, type: 2}
       propertyPath: m_LocalPosition.z
@@ -166,7 +166,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 310d9d612e68356498652c648f0f9b91, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 310d9d612e68356498652c648f0f9b91, type: 2}
       propertyPath: Speed
@@ -781,6 +781,7 @@ GameObject:
   - 114: {fileID: 590480667}
   - 61: {fileID: 590480670}
   - 50: {fileID: 590480672}
+  - 114: {fileID: 590480673}
   - 114: {fileID: 590480671}
   m_Layer: 8
   m_Name: skakalica
@@ -801,7 +802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bac8b2b6f53719459ce62c4fee0d740, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpMagnitude: 30
+  JumpMagnitude: 20
 --- !u!212 &590480668
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -880,6 +881,22 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+--- !u!114 &590480673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: 4dc1b48bfb66aaf42b8ee6718acf68d6,
+    type: 2}
+  m_PrefabInternal: {fileID: 694386576}
+  m_GameObject: {fileID: 590480666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 910c89efd5684344d947de2d50eb795d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 0
+  Path: {fileID: 921197938}
+  Speed: 10
+  MaxDistanceToGoal: .100000001
 --- !u!1001 &694386576
 Prefab:
   m_ObjectHideFlags: 0
@@ -923,6 +940,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 18
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 4dc1b48bfb66aaf42b8ee6718acf68d6, type: 2}
+      propertyPath: Path
+      value: 
+      objectReference: {fileID: 921197938}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4dc1b48bfb66aaf42b8ee6718acf68d6, type: 2}
   m_RootGameObject: {fileID: 590480666}
@@ -1161,7 +1182,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 793454625}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.4069748, y: 20.8186493, z: 0}
+  m_LocalPosition: {x: 3.46734715, y: 6.08297634, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1070348755}
@@ -1198,7 +1219,7 @@ Transform:
   - {fileID: 53328723}
   - {fileID: 911113819}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
 --- !u!61 &807206155
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1355,11 +1376,11 @@ Transform:
   m_PrefabInternal: {fileID: 34000703}
   m_GameObject: {fileID: 816747795}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.60454273, y: 22.3214245, z: 0}
+  m_LocalPosition: {x: -11.0576143, y: 7.65525818, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
 --- !u!1 &848090830
 GameObject:
   m_ObjectHideFlags: 0
