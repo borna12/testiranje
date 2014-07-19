@@ -134,11 +134,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 310d9d612e68356498652c648f0f9b91, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.60454273
+      value: -9.05892944
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 310d9d612e68356498652c648f0f9b91, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 22.3214245
+      value: 7.29526234
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 310d9d612e68356498652c648f0f9b91, type: 2}
       propertyPath: m_LocalPosition.z
@@ -166,7 +166,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 310d9d612e68356498652c648f0f9b91, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 310d9d612e68356498652c648f0f9b91, type: 2}
       propertyPath: Speed
@@ -1161,7 +1161,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 793454625}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.4069748, y: 20.8186493, z: 0}
+  m_LocalPosition: {x: 5.65910912, y: 5.61639786, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1070348755}
@@ -1198,7 +1198,7 @@ Transform:
   - {fileID: 53328723}
   - {fileID: 911113819}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
 --- !u!61 &807206155
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1355,11 +1355,11 @@ Transform:
   m_PrefabInternal: {fileID: 34000703}
   m_GameObject: {fileID: 816747795}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.60454273, y: 22.3214245, z: 0}
+  m_LocalPosition: {x: -9.05892944, y: 7.29526234, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
 --- !u!1 &848090830
 GameObject:
   m_ObjectHideFlags: 0
@@ -1935,15 +1935,7 @@ Transform:
   m_PrefabInternal: {fileID: 1436505218}
   m_GameObject: {fileID: 1272436027}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< HEAD
-<<<<<<< HEAD
   m_LocalPosition: {x: -15.1978178, y: 6.68523836, z: 0}
-=======
-  m_LocalPosition: {x: -19.73909, y: 1.64720547, z: 0}
->>>>>>> parent of 0d557aa... 10 i 11
-=======
-  m_LocalPosition: {x: -19.0130558, y: 2.87000179, z: 0}
->>>>>>> parent of 2a249ca... 13
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2093493253}
@@ -1993,6 +1985,7 @@ MonoBehaviour:
     Gravity: -25
     JumpRestrictions: 0
     JumpFrequency: .25
+    JumpMagnitude: 15
 --- !u!61 &1272436031
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2080,27 +2073,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400010, guid: ec751230de049a04fbd3619f1f978cb9, type: 2}
       propertyPath: m_LocalPosition.x
-<<<<<<< HEAD
-<<<<<<< HEAD
       value: -15.1978178
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: ec751230de049a04fbd3619f1f978cb9, type: 2}
       propertyPath: m_LocalPosition.y
       value: 6.68523836
-=======
-      value: -19.73909
-      objectReference: {fileID: 0}
-    - target: {fileID: 400010, guid: ec751230de049a04fbd3619f1f978cb9, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.64720547
->>>>>>> parent of 0d557aa... 10 i 11
-=======
-      value: -19.0130558
-      objectReference: {fileID: 0}
-    - target: {fileID: 400010, guid: ec751230de049a04fbd3619f1f978cb9, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 2.87000179
->>>>>>> parent of 2a249ca... 13
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: ec751230de049a04fbd3619f1f978cb9, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2128,7 +2105,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: ec751230de049a04fbd3619f1f978cb9, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: ec751230de049a04fbd3619f1f978cb9, type: 2}
+      propertyPath: DefaultParameters.JumpMagnitude
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ec751230de049a04fbd3619f1f978cb9, type: 2}
