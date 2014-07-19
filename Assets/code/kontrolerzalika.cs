@@ -14,7 +14,7 @@ public class kontrolerzalika : MonoBehaviour {
 
 	public kontrolerstanja2d State { get; private set; }
 	public Vector2 Velocity { get {return _velocity;}}
-<<<<<<< HEAD
+
 	public Vector3 PlatformVelocity { get; private set; }
 	public bool CanJump{get{
 			if (Parameters.JumpRestrictions==kontrolerparametar.JumpBehavior.CanJumpAnywhere)
@@ -22,9 +22,9 @@ public class kontrolerzalika : MonoBehaviour {
 			if (Parameters.JumpRestrictions == kontrolerparametar.JumpBehavior.CanJumpOnGround)
 				return State.IsGrounded;
 			return false;}}
-=======
-	public bool CanJump{get{return false;}}
->>>>>>> parent of 0d557aa... 10 i 11
+
+
+
 	public bool HandleCollisions { get; set;}
 	public kontrolerparametar Parameters{get{return _overrideParameters ?? DefaultParameters;}}
 
@@ -33,14 +33,13 @@ public class kontrolerzalika : MonoBehaviour {
 	private Vector3 _localScale;
 	private BoxCollider2D _boxCollider;
 	private kontrolerparametar _overrideParameters;
-<<<<<<< HEAD
+
 	private float _jumpIn;
 	private GameObject _lastStandingOn;
 
 	private Vector3 _activeGlobalPlatformPoint, _activateLocalPlatformPoint;
 
-=======
->>>>>>> parent of 0d557aa... 10 i 11
+
 	private Vector3
 		_raycastTopLeft,
 		_raycastBottomRight,
@@ -240,7 +239,7 @@ public class kontrolerzalika : MonoBehaviour {
 	}
 	private bool HandleHorizontalSlope(ref Vector2 deltaMovement, float angle, bool isGoingRight)
 	{
-<<<<<<< HEAD
+
 		if (Mathf.RoundToInt (angle) == 90)
 						return false;
 
@@ -256,9 +255,9 @@ public class kontrolerzalika : MonoBehaviour {
 		State.IsCollidingBelow = true;
 		return true;
 
-=======
+
 		return false;
->>>>>>> parent of 0d557aa... 10 i 11
+
 	}
 	public void OnTriggerEnter2D(Collider2D other)
 	{
@@ -270,4 +269,4 @@ public class kontrolerzalika : MonoBehaviour {
 	}
 
 }
-	                 
+
