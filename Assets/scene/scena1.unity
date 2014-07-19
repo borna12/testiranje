@@ -1932,7 +1932,7 @@ Transform:
   m_PrefabInternal: {fileID: 1436505218}
   m_GameObject: {fileID: 1272436027}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.73909, y: 1.64720547, z: 0}
+  m_LocalPosition: {x: -19.0130558, y: 2.87000179, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2093493253}
@@ -1982,6 +1982,7 @@ MonoBehaviour:
     Gravity: -25
     JumpRestrictions: 0
     JumpFrequency: .25
+    JumpMagnitude: 15
 --- !u!61 &1272436031
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2069,11 +2070,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400010, guid: ec751230de049a04fbd3619f1f978cb9, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -19.73909
+      value: -19.0130558
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: ec751230de049a04fbd3619f1f978cb9, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.64720547
+      value: 2.87000179
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: ec751230de049a04fbd3619f1f978cb9, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2101,7 +2102,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: ec751230de049a04fbd3619f1f978cb9, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: ec751230de049a04fbd3619f1f978cb9, type: 2}
+      propertyPath: DefaultParameters.JumpMagnitude
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ec751230de049a04fbd3619f1f978cb9, type: 2}

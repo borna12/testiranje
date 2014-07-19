@@ -19,4 +19,7 @@ public class kontrolerparametar {
 
 	public float JumpFrequency = .25f;
 
+	public float JumpMagnitude=12;
+
+
 }
