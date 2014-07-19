@@ -321,12 +321,19 @@ public class kontrolerzalika : MonoBehaviour {
 	}
 	public void OnTriggerEnter2D(Collider2D other)
 	{
+		var paramaters = other.gameObject.GetComponent<kontroler_fizika_2d>();
+		if (paramaters == null)
+						return;
 
+		_overrideParameters = paramaters.Parameters;
 	}
 	public void OnTriggerExit2D(Collider2D other)
 	{
+		var parameters = other.gameObject.GetComponent<kontroler_fizika_2d> ();
+		if (parameters == null)
+						return;
 
+		_overrideParameters = null;
 	}
 
-}
-	                 
+}               
