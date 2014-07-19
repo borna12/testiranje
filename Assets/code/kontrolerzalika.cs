@@ -14,6 +14,7 @@ public class kontrolerzalika : MonoBehaviour {
 
 	public kontrolerstanja2d State { get; private set; }
 	public Vector2 Velocity { get {return _velocity;}}
+	public Vector3 PlatformVelocity { get; private set; }
 	public bool CanJump{get{
 			if (Parameters.JumpRestrictions==kontrolerparametar.JumpBehavior.CanJumpAnywhere)
 				return _jumpIn<0;
@@ -30,6 +31,9 @@ public class kontrolerzalika : MonoBehaviour {
 	private BoxCollider2D _boxCollider;
 	private kontrolerparametar _overrideParameters;
 	private float _jumpIn;
+	private GameObject _lastStandingOn;
+
+	private Vector3 _activeGlobalPlatformPoint, _activateLocalPlatformPoint;
 
 	private Vector3
 		_raycastTopLeft, 
@@ -103,7 +107,7 @@ public class kontrolerzalika : MonoBehaviour {
 		}
 		_transform.Translate (deltaMovement,Space.World);
 
-		//kasnije dorađuje se za kretnju
+
 		if (Time.deltaTime > 0)
 						_velocity = deltaMovement / Time.deltaTime;
 
@@ -112,10 +116,40 @@ public class kontrolerzalika : MonoBehaviour {
 
 		if (State.IsMovingDownSlope)
 						_velocity.y = 0;
+
+		if (StandingOn != null) {
+						_activeGlobalPlatformPoint = transform.position;
+						_activateLocalPlatformPoint = StandingOn.transform.InverseTransformPoint (transform.position);
+
+						Debug.DrawLine (transform.position, _activeGlobalPlatformPoint);
+						Debug.DrawLine (transform.position, _activateLocalPlatformPoint);
+
+						if (_lastStandingOn != StandingOn) {
+								if (_lastStandingOn != null)
+										_lastStandingOn.SendMessage ("ControllerExit2D", this, SendMessageOptions.DontRequireReceiver);
+
+								StandingOn.SendMessage ("ControllerEnter2D", this, SendMessageOptions.DontRequireReceiver);
+								_lastStandingOn = StandingOn;
+						} else if (StandingOn != null)
+								StandingOn.SendMessage ("ControllerStay2D", this, SendMessageOptions.DontRequireReceiver);
+				} else if (_lastStandingOn != null) {
+			_lastStandingOn.SendMessage("ControllerStay2D",this,SendMessageOptions.DontRequireReceiver);
+			_lastStandingOn = null;
+		}
 	}
 	private void HandlePlatforms()
 	{
+		if (StandingOn != null) {
+						var newGlobalPlatformPoint = StandingOn.transform.TransformPoint (_activateLocalPlatformPoint);
+						var moveDistance = newGlobalPlatformPoint - _activeGlobalPlatformPoint;
 
+						if (moveDistance != Vector3.zero)
+								transform.Translate (moveDistance, Space.World);
+
+			PlatformVelocity = (newGlobalPlatformPoint - _activeGlobalPlatformPoint) / Time.deltaTime;
+				} else 
+						PlatformVelocity = Vector3.zero;
+		StandingOn = null;
 	}
 	private void RayCastOrigins()
 	{
@@ -243,9 +277,11 @@ public class kontrolerzalika : MonoBehaviour {
 	{
 		if (Mathf.RoundToInt (angle) == 90)
 						return false;
+
 		if (angle > Parameters.SlopeLimit) {
 			deltaMovement.x=0;
 			return true;}
+
 	if (deltaMovement.y > .07f)
 						return true;
 		deltaMovement.x += isGoingRight ? -SkinWidth : SkinWidth;
