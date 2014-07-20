@@ -36,24 +36,38 @@ public class levelmanager : MonoBehaviour
 	}
 	public void Start()
 	{
-	_checkpoints = FindObjectsOfType<checkpoint>().OrderBy(t => t.transform.position.x).ToList();
-	_currentCheckpointIndex = _checkpoints.Count > 0 ? 0 : -1;
+				_checkpoints = FindObjectsOfType<checkpoint> ().OrderBy (t => t.transform.position.x).ToList ();
+				_currentCheckpointIndex = _checkpoints.Count > 0 ? 0 : -1;
 
-		Player = FindObjectOfType<igrac> ();
-		Camera = FindObjectOfType<kameraKontrole> ();
+				Player = FindObjectOfType<igrac> ();
+				Camera = FindObjectOfType<kameraKontrole> ();
 
-		_started = DateTime.UtcNow;
+				_started = DateTime.UtcNow;
+
+				var listners = FindObjectsOfType<MonoBehaviour> ().OfType<IPlayerRespaenListner> ();
+				foreach (var listener in listners) {
+						for (var i = _checkpoints.Count -1; i >=0; i--) {
+								var distance = ((MonoBehaviour)listener).transform.position.x - _checkpoints [i].transform.position.x;
+								if (distance < 0)
+										continue;
+				
+								_checkpoints[i].AssignObjectToCheckpoint (listener);
+								break;
+						}
+				}
+
 
 #if UNITY_EDITOR
-		if (DebugSpawn != null)
-						DebugSpawn.SpawnPlayer (Player);
-		else if (_currentCheckpointIndex != -1)
-				_checkpoints [_currentCheckpointIndex].SpawnPlayer (Player);
+						if (DebugSpawn != null)
+								DebugSpawn.SpawnPlayer (Player);
+						else if (_currentCheckpointIndex != -1)
+								_checkpoints [_currentCheckpointIndex].SpawnPlayer (Player);
 #else
 		if (_currentCheckpointIndex!=-1)
 			_checkpoints[_currentCheckpointIndex].SpawnPlayer(Player);
 #endif
-	}
+				
+		}
 	public void Update(){
 		var isAtLastCheckPoint = _currentCheckpointIndex + 1 >= _checkpoints.Count;
 		if (isAtLastCheckPoint)
@@ -69,7 +83,10 @@ public class levelmanager : MonoBehaviour
 		gamemanager.Instance.AddPoints (CurrentTimeBonus);
 		_savedPoints = gamemanager.Instance.Points;
 		_started = DateTime.UtcNow;
-	}
+
+	
+		}
+
 
 	public void KillPlayer(){
 
