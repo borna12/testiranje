@@ -54,7 +54,7 @@ public class levelmanager : MonoBehaviour
 
 	public void KillPlayer(){
 
-		StartCoroutine (KillPlayerCo());
+		StartCoroutine(KillPlayerCo());
 
 	}
 
