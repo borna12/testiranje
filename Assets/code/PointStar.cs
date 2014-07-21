@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+
 
 public class PointStar : MonoBehaviour, IPlayerRespaenListner {
 
@@ -8,16 +8,19 @@ public class PointStar : MonoBehaviour, IPlayerRespaenListner {
 
 	public void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.GetComponent<igrac> () == null)
+		if (other.GetComponent<igrac>() == null)
 						return;
 		gamemanager.Instance.AddPoints (PointsToAdd);
 		Instantiate (Effect, transform.position, transform.rotation);
 
 		gameObject.SetActive (false);
 
+        FloatingText1.Show(string.Format("+{0}!",PointsToAdd), "PointStarText", new fromWorldPintTextPointer(Camera.main, transform.position, 1.5f, 50));
+
+
 	}
 
-	public void OnPlayerrespawnInThisCheckPoint(checkpoint checkpoint, igrac player)
+	public void OnPlayerrespawnInThisCheckPoint(checkpoint check, igrac player)
 	{
 		gameObject.SetActive (true);
 	}

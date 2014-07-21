@@ -57,6 +57,7 @@ public class igrac : MonoBehaviour {
 		}
 	public void TakeDamage(int damage)
 	{
+		FloatingText1.Show (string.Format ("-{0}", damage), "PlayerTakeDamageText", new fromWorldPintTextPointer (Camera.main, transform.position, 2f, 60f));
 		Instantiate (OuchEffect, transform.position, transform.rotation);
 		Health -= damage;
 

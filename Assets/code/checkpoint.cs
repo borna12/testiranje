@@ -10,10 +10,16 @@ public class checkpoint : MonoBehaviour {
 		_listners = new List<IPlayerRespaenListner> ();
 	}
 
-	public void PlayerHitCheckpoint(){}
+	public void PlayerHitCheckpoint()
+	{StartCoroutine(PlayerHitCheckpointCo(levelmanager.Instance.CurrentTimeBonus));
+		}
 
 	private IEnumerator PlayerHitCheckpointCo(int bonus)
-	{yield break;}
+	{
+		FloatingText1.Show ("Checkpoint!","CheckpointText", new centeredTextPositioner(.5f));
+		yield return new WaitForSeconds (.5f);
+		FloatingText1.Show (string.Format ("+{0} time bonus!",bonus), "CheckpointText", new centeredTextPositioner (.5f));
+	}
 
 	public void PlayerLeftCheckpoint()
 	{}
