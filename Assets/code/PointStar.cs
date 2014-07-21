@@ -15,7 +15,8 @@ public class PointStar : MonoBehaviour, IPlayerRespaenListner {
 
 		gameObject.SetActive (false);
 
-        FloatingText1.Show(string.Format("+{0}!",PointsToAdd), "PointStarText", new fromWorldPintTextPointer(Camera.main, transform.position, 1.5f, 50));
+        FloatingText1.Show(string.Format("+{0}!",PointsToAdd), "PointStarText", 
+		                   new fromWorldPintTextPointer(Camera.main, transform.position, 1.5f, 50));
 
 
 	}
