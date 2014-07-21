@@ -4,10 +4,10 @@ using System.Collections.Generic;
 
 public class checkpoint : MonoBehaviour {
 
-	private List<IPlayerRespaenListner> _listners;
+	private List<IPlayerRespawnListener> _listners;
 
 	public void Awake(){
-		_listners = new List<IPlayerRespaenListner> ();
+		_listners = new List<IPlayerRespawnListener> ();
 	}
 
 	public void PlayerHitCheckpoint()
@@ -16,9 +16,9 @@ public class checkpoint : MonoBehaviour {
 
 	private IEnumerator PlayerHitCheckpointCo(int bonus)
 	{
-		FloatingText1.Show ("Checkpoint!","CheckpointText", new centeredTextPositioner(.5f));
+		FloatingText.Show ("Checkpoint!","CheckpointText", new centeredTextPositioner(.05f));
 		yield return new WaitForSeconds (.5f);
-		FloatingText1.Show (string.Format ("+{0} time bonus!",bonus), "CheckpointText", new centeredTextPositioner (.5f));
+		FloatingText.Show (string.Format ("+{0} time bonus!",bonus), "CheckpointText", new centeredTextPositioner (.5f));
 	}
 
 	public void PlayerLeftCheckpoint()
@@ -29,10 +29,10 @@ public class checkpoint : MonoBehaviour {
 		player.RespawnAt (transform);
 
 		foreach (var listener in _listners)
-						listener.OnPlayerrespawnInThisCheckPoint (this, player);
+			listener.OnPlayerRespawnInThicCheckpoint (this, player);
 	}
 
-	public void AssignObjectToCheckpoint(IPlayerRespaenListner listner)
+	public void AssignObjectToCheckpoint(IPlayerRespawnListener listner)
 	{
 	
 		_listners.Add (listner);

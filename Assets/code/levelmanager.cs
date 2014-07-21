@@ -44,7 +44,7 @@ public class levelmanager : MonoBehaviour
 
 				_started = DateTime.UtcNow;
 
-				var listners = FindObjectsOfType<MonoBehaviour> ().OfType<IPlayerRespaenListner> ();
+		var listners = FindObjectsOfType<MonoBehaviour> ().OfType<IPlayerRespawnListener> ();
 				foreach (var listener in listners) {
 						for (var i = _checkpoints.Count -1; i >=0; i--) {
 								var distance = ((MonoBehaviour)listener).transform.position.x - _checkpoints [i].transform.position.x;

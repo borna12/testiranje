@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-/*
+
 public abstract class projektil : MonoBehaviour {
 
 	public float Speed;
@@ -63,4 +63,3 @@ public abstract class projektil : MonoBehaviour {
 
 	}
 }
-*/

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class centeredTextPositioner : IFloatingTextPosition {
+public class centeredTextPositioner : IFloatingTextPositioner {
 	private readonly float _speed;
 	private float _textPosition;
 
