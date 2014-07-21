@@ -16,6 +16,9 @@ public abstract class projektil : MonoBehaviour {
 
 	public void Initialize(GameObject owner, Vector2 direction, Vector2 initialVelocity)
 	{
+		transform.right = direction;
+	
+
 		Owner = owner;
 		Direction = direction;
 		InitialVelocity = initialVelocity;

@@ -12,6 +12,7 @@ public class SimpleProjectile : projektil {
 			return;
 		}
 		transform.Translate((Direction + new Vector2(InitialVelocity.x,0))* Speed *Time.deltaTime,Space.World);
+		transform.Translate (Direction * ((Mathf.Abs(InitialVelocity.x)+Speed)*Time.deltaTime),Space.World);
 	}
 
 	public void TakeDamage(int damage, GameObject instigator)
@@ -25,6 +26,7 @@ public class SimpleProjectile : projektil {
 
 			}
 		}
+		DestroyProjectile ();
 	}
 
 	protected override void OnCollideOther(Collider2D other)
