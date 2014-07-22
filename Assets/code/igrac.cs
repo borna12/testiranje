@@ -62,7 +62,7 @@ public class igrac : MonoBehaviour {
 
 		transform.position = spawnPoint.position;
 		}
-	public void TakeDamage(int damage)
+	public void TakeDamage(int damage, GameObject instigator)
 	{
 		FloatingText.Show (string.Format ("-{0}", damage), "PlayerTakeDamageText", new FromWorldPointTextPositioner (Camera.main, transform.position, 2f, 60f));
 		Instantiate (OuchEffect, transform.position, transform.rotation);
@@ -72,7 +72,15 @@ public class igrac : MonoBehaviour {
 						levelmanager.Instance.KillPlayer ();
 		}
 
-	private void HandleInput()
+    public void giveHealth(int health, GameObject instagator)
+    {
+        FloatingText.Show(string.Format("+{0}", health), "PlayerGotHealthText",
+            new FromWorldPointTextPositioner(Camera.main, transform.position, 2f, 60f));
+
+        Health = Mathf.Min(Health +health,MaxHealth);
+    }
+
+    private void HandleInput()
 	{
 		if (Input.GetKey (KeyCode.D)) {
 						_normalizedHorizontalSpeed = 1;

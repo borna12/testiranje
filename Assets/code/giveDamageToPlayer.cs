@@ -18,7 +18,7 @@ public class giveDamageToPlayer : MonoBehaviour {
 		if (player == null)
 						return;
 
-		player.TakeDamage (DamagetoGive);
+		player.TakeDamage (DamagetoGive,gameObject);
 		var controller = player.GetComponent<kontrolerzalika> ();
 		var totalVelocity = controller.Velocity + _velocity;
 
