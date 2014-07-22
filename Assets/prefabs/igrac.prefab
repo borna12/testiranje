@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: ruk1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400002}
   - 212: {fileID: 21200002}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: ruk2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400004}
   - 212: {fileID: 21200004}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: dbjel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400006}
   - 212: {fileID: 21200006}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: lijevooko
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400008}
   - 212: {fileID: 21200008}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: lbjel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,6 +92,7 @@ GameObject:
   - 114: {fileID: 11400002}
   - 50: {fileID: 5000000}
   - 61: {fileID: 6100000}
+  - 114: {fileID: 11400006}
   m_Layer: 11
   m_Name: igrac
   m_TagString: Untagged
@@ -108,7 +109,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400012}
   - 212: {fileID: 21200010}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: desnooko
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +125,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400014}
   - 212: {fileID: 21200012}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: lijevan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +141,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400016}
   - 212: {fileID: 21200014}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: tjelo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +157,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400018}
   - 212: {fileID: 21200016}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: desnan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +175,7 @@ GameObject:
   - 198: {fileID: 19800000}
   - 199: {fileID: 19900000}
   - 114: {fileID: 11400004}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +190,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400022}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: projektili
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +265,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.2367973, y: 7.5448103, z: 0}
+  m_LocalPosition: {x: 18.161459, y: 7.5448103, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400016}
@@ -418,6 +419,9 @@ MonoBehaviour:
   FireRate: .300000012
   ProjectileFireLocation: {fileID: 400022}
   FireProjectileEffect: {fileID: 100000, guid: e6d4be020dd5fdf42813961a23f04d88, type: 2}
+  PlayerHitsound: {fileID: 8300000, guid: 85055df52cc2ec749b846571d8c74921, type: 3}
+  PlayerShootSound: {fileID: 8300000, guid: abe66314f4c616c40930b3beca986fdc, type: 3}
+  PlayerHealthsound: {fileID: 8300000, guid: e6ea8b84c8b30ad4ca7e5c20a1948c50, type: 3}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -430,6 +434,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LayerName: Particles
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d7577c3065418840b13644b91ce02c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bounds: {fileID: 0}
+  Above: 0
+  Below: 2
+  Left: 1
+  Right: 1
 --- !u!198 &19800000
 ParticleSystem:
   m_ObjectHideFlags: 1

@@ -4,12 +4,15 @@ public class PointStar : MonoBehaviour, IPlayerRespawnListener
 {
     public GameObject Effect;
     public int PointsToAdd = 10;
+    public AudioClip HitStarSound;
+
 
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.GetComponent<igrac>() == null)
             return;
-
+        if  (HitStarSound!= null)
+            AudioSource.PlayClipAtPoint(HitStarSound, transform.position);
         gamemanager.Instance.AddPoints(PointsToAdd);
         Instantiate(Effect, transform.position, transform.rotation);
 

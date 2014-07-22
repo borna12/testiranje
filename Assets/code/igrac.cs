@@ -17,6 +17,9 @@ public class igrac : MonoBehaviour {
 	public float FireRate;
 	public Transform ProjectileFireLocation;
 	public GameObject FireProjectileEffect;
+    public AudioClip PlayerHitsound;
+    public AudioClip PlayerShootSound;
+    public AudioClip PlayerHealthsound;
 
 	public int Health { get; private set;}
 	public bool IsDead { get; private set;}
@@ -41,7 +44,14 @@ public class igrac : MonoBehaviour {
 		_controller.SetHorizontalForce(Mathf.Lerp(_controller.Velocity.x,_normalizedHorizontalSpeed*MaxSpeed, Time.deltaTime*movementFactor));
 	}
 
-	public void Kill()
+    public void FinishLevel()
+    {
+        enabled = false;
+        _controller.enabled = false;
+        collider2D.enabled = false;
+    }
+
+    public void Kill()
 	{
 		_controller.HandleCollisions = false;
 		collider2D.enabled = false;
@@ -64,6 +74,7 @@ public class igrac : MonoBehaviour {
 		}
 	public void TakeDamage(int damage, GameObject instigator)
 	{
+        AudioSource.PlayClipAtPoint(PlayerHitsound, transform.position);
 		FloatingText.Show (string.Format ("-{0}", damage), "PlayerTakeDamageText", new FromWorldPointTextPositioner (Camera.main, transform.position, 2f, 60f));
 		Instantiate (OuchEffect, transform.position, transform.rotation);
 		Health -= damage;
@@ -74,6 +85,7 @@ public class igrac : MonoBehaviour {
 
     public void giveHealth(int health, GameObject instagator)
     {
+        AudioSource.PlayClipAtPoint(PlayerHealthsound,transform.position);
         FloatingText.Show(string.Format("+{0}", health), "PlayerGotHealthText",
             new FromWorldPointTextPositioner(Camera.main, transform.position, 2f, 60f));
 
@@ -118,6 +130,8 @@ public class igrac : MonoBehaviour {
 
 
 		_canFireIn = FireRate;
+
+        AudioSource.PlayClipAtPoint(PlayerShootSound,transform.position);
 	}
 
 	private void Flip(){

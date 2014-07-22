@@ -8,6 +8,7 @@ public class simpleEnemyAi : MonoBehaviour, ITakeDamage,IPlayerRespawnListener
     public projektil Projectile;
     public GameObject DestroyedEffect;
     public int PointsToGivePlayer;
+    public AudioClip ShootSound;
 
     private kontrolerzalika _controller;
     private Vector2 _direction;
@@ -17,7 +18,7 @@ public class simpleEnemyAi : MonoBehaviour, ITakeDamage,IPlayerRespawnListener
     public void Start()
     {
         _controller = GetComponent<kontrolerzalika>();
-        _direction = new Vector2(1, 0);
+        _direction = new Vector2(-1, 0);
         _startPosition = transform.position;
 
     }
@@ -43,6 +44,9 @@ public class simpleEnemyAi : MonoBehaviour, ITakeDamage,IPlayerRespawnListener
         var projectile = (projektil)Instantiate(Projectile, transform.position, transform.rotation);
         projectile.Initialize(gameObject, _direction, _controller.Velocity);
         _canFireIn = FireRate;
+
+        if (ShootSound != null)
+            AudioSource.PlayClipAtPoint(ShootSound,transform.position);
 
     }
 

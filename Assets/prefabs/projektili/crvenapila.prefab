@@ -67,6 +67,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DestroyEffect: {fileID: 100000, guid: 2e27857664255aa4988c475fd050038c, type: 2}
   PointsToGivePlayer: 15
+  DestroySound: {fileID: 8300000, guid: 460b097932b2a544cbc55bfdc535e831, type: 3}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

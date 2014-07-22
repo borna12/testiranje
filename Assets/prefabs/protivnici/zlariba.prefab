@@ -9,10 +9,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 400002}
   - 212: {fileID: 21200000}
-  - 61: {fileID: 6100000}
   - 50: {fileID: 5000000}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
+  - 61: {fileID: 6100000}
   m_Layer: 12
   m_Name: zlariba
   m_TagString: Untagged
@@ -27,8 +27,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35.6396523, y: 14.4593058, z: 0}
-  m_LocalScale: {x: 1.15458417, y: 1.05152857, z: 1}
+  m_LocalPosition: {x: 42.9245071, y: 9.74021244, z: 0}
+  m_LocalScale: {x: 1.12889874, y: 1.02813578, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -56,8 +56,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Size: {x: 3.02452874, y: 2.8599999}
-  m_Center: {x: 1.51876664, y: 0}
+  m_Size: {x: 3.1500001, y: 2.8599999}
+  m_Center: {x: 0, y: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -74,6 +74,7 @@ MonoBehaviour:
   Projectile: {fileID: 11400000, guid: 17dec6c0d42233d41b70250d021e1132, type: 2}
   DestroyedEffect: {fileID: 100000, guid: 5cab596a3269ee44a962eda285466b33, type: 2}
   PointsToGivePlayer: 10
+  ShootSound: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
