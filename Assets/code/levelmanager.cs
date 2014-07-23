@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class levelmanager : MonoBehaviour 
@@ -32,6 +33,7 @@ public class levelmanager : MonoBehaviour
 
 	public void Awake()
 	{
+	    _savedPoints = gamemanager.Instance.Points;
 		Instance = this;
 	}
 	public void Start()
@@ -88,7 +90,30 @@ public class levelmanager : MonoBehaviour
 		}
 
 
-	public void KillPlayer(){
+    public void GoToNextLevel(string levelName)
+    {
+        StartCoroutine(GoToNextLevelCo(levelName));
+    }
+
+    private IEnumerator GoToNextLevelCo(string levelName)
+    {
+        Player.FinishLevel();
+        gamemanager.Instance.AddPoints(CurrentTimeBonus);
+        FloatingText.Show("Level1 Complite", "CheckpointText", new centeredTextPositioner(0.1f));
+        yield return new WaitForSeconds(1);
+        FloatingText.Show(string.Format("{0} points!", gamemanager.Instance.Points), "CheckpointText", new centeredTextPositioner(.1f));
+        yield return new WaitForSeconds(5f);
+
+        if (string.IsNullOrEmpty(levelName))
+            Application.LoadLevel("StartScreen");
+        else
+        {
+            Application.LoadLevel(levelName);
+        }
+
+    }
+
+    public void KillPlayer(){
 
 		StartCoroutine(KillPlayerCo());
 
