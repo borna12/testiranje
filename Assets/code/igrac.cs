@@ -20,6 +20,7 @@ public class igrac : MonoBehaviour {
     public AudioClip PlayerHitsound;
     public AudioClip PlayerShootSound;
     public AudioClip PlayerHealthsound;
+    public Animator Animator;
 
 	public int Health { get; private set;}
 	public bool IsDead { get; private set;}
@@ -42,7 +43,12 @@ public class igrac : MonoBehaviour {
 						_controller.SetHorizontalForce (0);
 		else
 		_controller.SetHorizontalForce(Mathf.Lerp(_controller.Velocity.x,_normalizedHorizontalSpeed*MaxSpeed, Time.deltaTime*movementFactor));
-	}
+
+        Animator.SetBool("IsGrounded",_controller.State.IsGrounded);
+        Animator.SetBool("IsDead",IsDead);
+        Animator.SetFloat("Speed",Mathf.Abs(_controller.Velocity.x)/MaxSpeed);
+
+    }
 
     public void FinishLevel()
     {
@@ -132,6 +138,7 @@ public class igrac : MonoBehaviour {
 		_canFireIn = FireRate;
 
         AudioSource.PlayClipAtPoint(PlayerShootSound,transform.position);
+        Animator.SetTrigger("fire");
 	}
 
 	private void Flip(){

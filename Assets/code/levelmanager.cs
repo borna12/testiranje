@@ -5,7 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
-public class levelmanager : MonoBehaviour 
+public class levelmanager : MonoBehaviour
 {
 	public static levelmanager Instance { get; private set;}
 
@@ -91,7 +91,9 @@ public class levelmanager : MonoBehaviour
 
 
     public void GoToNextLevel(string levelName)
+
     {
+    
         StartCoroutine(GoToNextLevelCo(levelName));
     }
 

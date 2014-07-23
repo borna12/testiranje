@@ -93,6 +93,7 @@ GameObject:
   - 50: {fileID: 5000000}
   - 61: {fileID: 6100000}
   - 114: {fileID: 11400006}
+  - 95: {fileID: 9500000}
   m_Layer: 11
   m_Name: igrac
   m_TagString: Untagged
@@ -265,7 +266,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.161459, y: 7.5448103, z: 0}
+  m_LocalPosition: {x: 11.8857613, y: -3.03282309, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400016}
@@ -298,8 +299,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100014}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.218805313, y: -.836477876, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: .00316926022, w: .999994993}
+  m_LocalPosition: {x: -.218805313, y: -.836477757, z: 0}
   m_LocalScale: {x: .328734338, y: .328734696, z: 1}
   m_Children: []
   m_Father: {fileID: 400010}
@@ -323,7 +324,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .238355637, y: -.853406549, z: 0}
+  m_LocalPosition: {x: .238355637, y: -.853406429, z: 0}
   m_LocalScale: {x: .328734338, y: .328734696, z: 1}
   m_Children: []
   m_Father: {fileID: 400010}
@@ -378,6 +379,20 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: 1.60000002, y: 1.70000005}
   m_Center: {x: 0, y: -.100000001}
+--- !u!95 &9500000
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100010}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7ab0c31ec1b00d846ba19663579d583f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -422,6 +437,7 @@ MonoBehaviour:
   PlayerHitsound: {fileID: 8300000, guid: 85055df52cc2ec749b846571d8c74921, type: 3}
   PlayerShootSound: {fileID: 8300000, guid: abe66314f4c616c40930b3beca986fdc, type: 3}
   PlayerHealthsound: {fileID: 8300000, guid: e6ea8b84c8b30ad4ca7e5c20a1948c50, type: 3}
+  Animator: {fileID: 9500000}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1

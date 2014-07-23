@@ -10,6 +10,7 @@ public class FinishLevel : MonoBehaviour
 {
     if (other.GetComponent<igrac>() == null)
         return;
+        
    levelmanager.Instance.GoToNextLevel(LevelName);
 }
 }
