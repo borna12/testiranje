@@ -9,12 +9,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
-  - 114: {fileID: 11400002}
+  - 61: {fileID: 6100000}
   - 114: {fileID: 11400000}
-  - 58: {fileID: 5800000}
-  - 95: {fileID: 9500000}
-  m_Layer: 10
-  m_Name: crvenapila
+  m_Layer: 0
+  m_Name: exit_way_out_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,36 +25,22 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.11690021, y: -7.54320621, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: .00261306763, y: .0902304649, z: 0}
+  m_LocalScale: {x: .24481827, y: .213142127, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!58 &5800000
-CircleCollider2D:
+--- !u!61 &6100000
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Radius: .589999974
+  m_IsTrigger: 0
+  m_Size: {x: 35.1800003, y: 24.7299995}
   m_Center: {x: 0, y: 0}
---- !u!95 &9500000
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 568ae64bea1731844be70178b59e7590, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_HasTransformHierarchy: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -65,24 +49,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3812907f3b54e84088ebb29cffad013, type: 3}
+  m_Script: {fileID: 11500000, guid: 11866481c7949e844b343e98ec3b21e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamagetoGive: 10
---- !u!114 &11400002
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f93bd96154b89d4a9db7b879ec1f3cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DestroyEffect: {fileID: 100000, guid: 2e27857664255aa4988c475fd050038c, type: 2}
-  PointsToGivePlayer: 15
-  DestroySound: {fileID: 8300000, guid: 460b097932b2a544cbc55bfdc535e831, type: 3}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -101,9 +70,9 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 3710089593
+  m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300030, guid: 0d9ead739c8be6345b26750e5960da3a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7d272f2a1b0fdf54ba58b7afcfa471c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
