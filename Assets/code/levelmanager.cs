@@ -101,7 +101,7 @@ public class levelmanager : MonoBehaviour
     {
         Player.FinishLevel();
         gamemanager.Instance.AddPoints(CurrentTimeBonus);
-        FloatingText.Show("Level1 Complite", "CheckpointText", new centeredTextPositioner(0.1f));
+        FloatingText.Show("Level completed", "CheckpointText", new centeredTextPositioner(0.1f));
         yield return new WaitForSeconds(1);
         FloatingText.Show(string.Format("{0} points!", gamemanager.Instance.Points), "CheckpointText", new centeredTextPositioner(.1f));
         yield return new WaitForSeconds(5f);
