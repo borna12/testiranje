@@ -3,6 +3,7 @@
 --- !u!78 &1
 TagManager:
   tags:
+  - voda
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   User Layer 10: projektili
   User Layer 11: igrac
   User Layer 12: protivnici
-  User Layer 13: 
+  User Layer 13: voda
   User Layer 14: 
   User Layer 15: 
   User Layer 16: 

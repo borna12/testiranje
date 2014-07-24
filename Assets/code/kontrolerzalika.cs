@@ -326,6 +326,10 @@ public class kontrolerzalika : MonoBehaviour {
 						return;
 
 		_overrideParameters = paramaters.Parameters;
+
+
+			
+
 	}
 	public void OnTriggerExit2D(Collider2D other)
 	{

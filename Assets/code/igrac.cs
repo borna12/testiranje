@@ -22,12 +22,15 @@ public class igrac : MonoBehaviour {
     public AudioClip PlayerHealthsound;
     public Animator Animator;
 
+
 	public int Health { get; private set;}
 	public bool IsDead { get; private set;}
+
 
 	private float _canFireIn;
 
 	public void Awake(){
+
 		_controller = GetComponent<kontrolerzalika>();
 		_isFacingRight = transform.localScale.x > 0;
 		Health = MaxHealth;
@@ -47,6 +50,7 @@ public class igrac : MonoBehaviour {
         Animator.SetBool("IsGrounded",_controller.State.IsGrounded);
         Animator.SetBool("IsDead",IsDead);
         Animator.SetFloat("Speed",Mathf.Abs(_controller.Velocity.x)/MaxSpeed);
+        
 
     }
 
@@ -55,6 +59,7 @@ public class igrac : MonoBehaviour {
         enabled = false;
         _controller.enabled = false;
         collider2D.enabled = false;
+		Animator.SetTrigger("win");
     }
 
     public void Kill()
@@ -139,10 +144,46 @@ public class igrac : MonoBehaviour {
 
         AudioSource.PlayClipAtPoint(PlayerShootSound,transform.position);
         Animator.SetTrigger("fire");
+
+
 	}
 
 	private void Flip(){
 		transform.localScale = new Vector3 (-transform.localScale.x, transform.localScale.y, transform.localScale.z);
 		_isFacingRight = transform.localScale.x > 0;
 	}
+    
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.gameObject.name == "vodenazamka")
+	{
+		
+		Animator.SetTrigger("swim");
+		}
+
+
+
+
+	}
+	void OnTriggerStay2D(Collider2D other)
+	{
+		if (other.gameObject.name == "vodenazamka")
+		{
+
+			Animator.SetTrigger("swim");
+
+		}
+	
+	}
+
+
+
 }
+
+
+
+
+
+
+
+			
