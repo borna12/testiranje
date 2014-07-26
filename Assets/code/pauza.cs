@@ -4,7 +4,7 @@ using System.Collections;
 
 public class pauza : MonoBehaviour
 {
-
+ 
 
     void Update()
     {
@@ -15,6 +15,7 @@ public class pauza : MonoBehaviour
             {
                 Time.timeScale = 0;
                 audio.Pause();
+
             }
             else
             {
